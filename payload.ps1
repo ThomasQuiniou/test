@@ -6,7 +6,8 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
 }
 
 # Utiliser le chemin de %USERPROFILE% pour plus de flexibilité
-$certPath = "$env:USERPROFILE\Documents\certificate.p12"
+$scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
+$certPath = Join-Path $scriptDir "certificate.p12"
 $certPassword = "" # Laissez vide si pas de mot de passe, sinon mettez le mot de passe ici
 
 # Fonction pour modifier temporairement les paramètres de sécurité
