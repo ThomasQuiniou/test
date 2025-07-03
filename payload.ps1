@@ -24,6 +24,7 @@ function Set-SecurityPolicy($enable) {
 
 # Définir les paramètres du serveur proxy
 Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings' -Name ProxyServer -Value '192.168.1.107:8080'
+Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings' -Name ProxyEnable -Value 1
 
 # Charger et installer le certificat
 try {
